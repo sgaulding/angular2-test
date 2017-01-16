@@ -185,10 +185,8 @@ _pkginfo.txt
 # Others
 ClientBin/
 ~$*
-*~
 *.dbmdl
 *.dbproj.schemaview
-*.pfx
 *.publishsettings
 node_modules/
 orleans.codegen.cs
@@ -250,3 +248,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# NPM Install
+typings/
