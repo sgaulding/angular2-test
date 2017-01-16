@@ -251,3 +251,7 @@ paket-files/
 
 # NPM Install
 typings/
+
+# Typescript
+app/**/*.*.js.map
+app/**/*.*.js
