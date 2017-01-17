@@ -253,5 +253,5 @@ paket-files/
 typings/
 
 # Typescript
-app/**/*.*.js.map
-app/**/*.*.js
+**/*.map
+**/app/**/*.js
