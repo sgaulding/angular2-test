@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
     selector: 'pm-app',
     templateUrl: 'app/app.component.html'
 })
-export class AppComponent { }
+export class AppComponent {
+    pageTitle: string = 'Angular2: Getting Started'
+}
