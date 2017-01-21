@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from "./products";
-import {ProductService} from "./product.service";
+import { ProductService} from "./product.service";
 
 @Component({
     selector: 'pm-products',
@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit{
     listFilter: string;
     showImages: boolean = false;
     products: IProduct[];
+    errorMessage: any;
 
     constructor(private _productService: ProductService){
     }
@@ -25,7 +26,11 @@ export class ProductListComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+            .subscribe(
+                products => this.products = products,
+                error => this.errorMessage = <any>error
+            );
     }
 
     onRatingClicked(message: string): void {
