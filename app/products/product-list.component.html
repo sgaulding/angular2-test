@@ -21,35 +21,38 @@
         <div class="table-responsive">
             <table class="table" *ngIf="products && products.length > 0">
                 <thead>
-                    <tr>
-                        <th>
-                            <button class="btn btn-primary" (click)="toggleShowImage()">Show Image</button>
-                        </th>
-                        <th>Product</th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Price</th>
-                        <th>5 Star Rating</th>
-                    </tr>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary" (click)="toggleShowImage()">Show Image</button>
+                    </th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products | productFilter:listFilter">
-                        <td>
-                            <img *ngIf="showImages"
-                                 src={{product.imageUrl}}
-                                 alt={{product.productName}}
-                                 [title]="product.productName"
-                                 [style.width.px]="imageWidth"
-                                 [style.margin.px]="imageMargin"
-                            />
-                        </td>
-                        <td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
-                        <td>{{product.productCode | lowercase}}</td>
-                        <td>{{product.releaseDate}}</td>
-                        <td>{{product.price | currency:'USD':true:"1.2-2"}}</td>
-                        <td><ai-star [rating]='product.starRating'
-                                     (ratingClick)="onRatingClicked($event)">...</ai-star></td>
-                    </tr>
+                <tr *ngFor="let product of products | productFilter:listFilter">
+                    <td>
+                        <img *ngIf="showImages"
+                             src={{product.imageUrl}}
+                             alt={{product.productName}}
+                             [title]="product.productName"
+                             [style.width.px]="imageWidth"
+                             [style.margin.px]="imageMargin"
+                        />
+                    </td>
+                    <td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
+                    <td>{{product.productCode | lowercase}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price | currency:'USD':true:"1.2-2"}}</td>
+                    <td>
+                        <ai-star [rating]='product.starRating'
+                                 (ratingClick)="onRatingClicked($event)">...
+                        </ai-star>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>

@@ -4,7 +4,7 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class ProductDetailGuard implements CanActivate {
 
-    constructor(private _router: Router){
+    constructor(private _router: Router) {
     }
 
     canActivate(route: ActivatedRouteSnapshot): boolean {
