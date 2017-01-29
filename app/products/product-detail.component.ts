@@ -32,8 +32,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
     getProduct(id: number) {
         this._productService.getProduct(id).subscribe(
-            product => this.product = product,
-            error => this.errorMessage = <any>error);
+            (product: IProduct) => this.product = product,
+            (error: any) => this.errorMessage = <any>error);
     }
 
     onBack(): void {
