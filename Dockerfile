@@ -1,10 +1,14 @@
-FROM mhart/alpine-node:6.9.2
+FROM node
 
 WORKDIR /var/app
 
 COPY . /var/app
 
 RUN npm install --production
+
+RUN npm install typings -g
+
+RUN typings install
 
 EXPOSE 3000
 
