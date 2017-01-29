@@ -1,0 +1,9 @@
+node_modules
+var
+.settings
+.project
+.idea
+.git
+*.log
+.DS_Store
+typings
